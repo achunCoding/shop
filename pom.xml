@@ -11,6 +11,7 @@
     <modules>
         <module>shop-generate</module>
         <module>shop-common</module>
+        <module>shop-demo</module>
     </modules>
 
 

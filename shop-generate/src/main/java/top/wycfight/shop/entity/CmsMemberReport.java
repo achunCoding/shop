@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * @author wycfight@163.com
  * @description: 
- * @date 2019-04-06 09:10
+ * @date 2019-04-11 10:17
  * @modify By: 
  */
 public class CmsMemberReport implements Serializable {

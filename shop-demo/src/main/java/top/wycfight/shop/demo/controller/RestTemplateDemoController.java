@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-import top.wycfight.shop.demo.dto.CommonResult;
+import top.wycfight.shop.common.api.CommonResult;
 import top.wycfight.shop.entity.PmsBrand;
 
 import java.util.HashMap;

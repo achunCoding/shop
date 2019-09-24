@@ -10,12 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import top.wycfight.shop.demo.dto.CommonPage;
-import top.wycfight.shop.demo.dto.CommonResult;
+import top.wycfight.shop.common.api.CommonPage;
+import top.wycfight.shop.common.api.CommonResult;
 import top.wycfight.shop.demo.dto.PmsBrandDto;
 import top.wycfight.shop.demo.service.DemoService;
 import top.wycfight.shop.entity.PmsBrand;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -31,6 +33,16 @@ public class DemoController {
 
     @Autowired
     private DemoService demoService;
+
+    @RequestMapping("/a")
+    public String a() {
+        return "/a";
+    }
+
+    @RequestMapping("/b")
+    public String b(HttpServletRequest request, HttpServletResponse response) {
+        return "/b";
+    }
 
     /**
      * 获取全部品牌列表
@@ -61,7 +73,7 @@ public class DemoController {
         int count = demoService.saveBrand(pmsBrandDto);
         if (count == 1) {
             LOGGER.debug(" createBrand success:{}", pmsBrandDto);
-            return CommonResult.success();
+            return CommonResult.success(pmsBrandDto);
         }
         LOGGER.debug(" createBrand failed:{}", pmsBrandDto);
         return CommonResult.failed();
@@ -107,7 +119,7 @@ public class DemoController {
         int count = demoService.deleteBrand(id);
         if (count == 1) {
             LOGGER.debug("deleteBrand success :id={}", id);
-            return CommonResult.success();
+            return CommonResult.success(null);
         }
         LOGGER.debug("deleteBrand failed :id={}", id);
         return CommonResult.failed();

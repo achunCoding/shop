@@ -1,0 +1,47 @@
+# 默认是开发环境
+spring:
+  profiles:
+    active: dev
+
+# MybatisXml映射路径
+mybatis:
+  config-location:
+    - classpath:mapper/*.xml
+    - classpath*:top/**/mapper/*.xml
+# JWT(JSON-WEB-TOKEN) 令牌
+jwt:
+  tokenHeader: Authorization #JWT存储的请求头
+  secret: mySecret #JWT加解密使用的密钥
+  expiration: 604800 #JWT的超期限时间(60*60*24)
+  tokenHead: Bearer  #JWT负载中拿到开头
+
+# aliyunOSS配置
+aliyun:
+  oss:
+    endpoint: oss-cn-shenzhen.aliyuncs.com
+    accessKeyId: test
+    accessKeySecret: test
+    bucketName: macro-oss
+    policy:
+      expire: 300
+    maxSize: 10
+    callback: http://localhost:8080/aliyun/oss/callback
+    dir:
+      prefix: shop/images/
+
+# Swagger界面内容配置
+swagger:
+  title: Thank API接口文档
+  description: good good study, day day up!
+  version: 1.0.0
+  termsOfServiceUrl: http://wycfight.top
+  contact:
+    name: Shop
+    url: https://wycfight.top
+    email: wycfight@163.com
+
+# log日志配置
+logging:
+  level:
+    root: info #日志配置DEBUG,INFO,WARN,ERROR
+    top.wycfight.shop: debug

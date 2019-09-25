@@ -12,6 +12,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  **/
 @Configuration
 @EnableTransactionManagement
-@MapperScan({"top.wycfight.shop.mapper","top.wycfight.shop.dao"})
+@MapperScan({"top.wycfight.shop.dao","top.wycfight.shop.mapper"})
 public class MybatisConfig {
 }

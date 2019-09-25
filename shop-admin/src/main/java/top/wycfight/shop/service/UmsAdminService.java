@@ -25,4 +25,12 @@ public interface UmsAdminService {
      * @return
      */
     List<UmsPermission> getPermissionList(Long adminId);
+
+    /**
+     * 登录功能
+     * @param username 用户名
+     * @param password 密码
+     * @return JWT生成的Token
+     */
+    String login(String username, String password);
 }
